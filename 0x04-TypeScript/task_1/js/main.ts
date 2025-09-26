@@ -61,7 +61,7 @@ interface IStudentClass {
 }
 
 
-class StudentClass{
+class StudentClass {
   private firstName: string;
   private lastName: string;
 
