@@ -1,4 +1,4 @@
-interface Teacher {
+export interface Teacher {
     readonly firstName: string;
     readonly fullTimeEmployee: boolean;
     yearsOfExperience?: number;
