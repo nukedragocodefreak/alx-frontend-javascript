@@ -26,17 +26,17 @@ export const Director = class Director implements DirectorInterface {
 }
 
 export const Teacher = class Teacher implements TeacherInterface {
-    workFromHome(): string {
-        return 'Cannot work from home';
-    }
+  workFromHome(): string {
+    return 'Cannot work from home';
+  }
 
-    getCoffeeBreak(): string {
-        return 'Cannot have a break';
-    }
+  getCoffeeBreak(): string {
+    return 'Cannot have a break';
+  }
 
-    workTeacherTasks(): string {
-        return 'Getting to work';
-    }
+  workTeacherTasks(): string {
+    return 'Getting to work';
+  }
 }
 
 export function createEmployee(firstName: string, lastName: string, salary: number | string): DirectorInterface | TeacherInterface {
