@@ -42,10 +42,10 @@ const director1: Director = {
 };
 
 export interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  ({ firstName, lastName }: { firstName: string; lastName: string }): string;
 }
 
-export function printTeacher(firstName: string, lastName: string): string {
+export function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
   return `${firstName[0]}. ${lastName}`;
 }
 
