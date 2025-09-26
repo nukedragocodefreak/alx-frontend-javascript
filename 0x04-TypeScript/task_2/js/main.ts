@@ -1,11 +1,11 @@
 
-interface DirectorInterface {
+interface DirectorInterface{
     workFromHome(): string;
     getCoffeeBreak(): string;
     workDirectorTasks(): string;
 }
 
-interface TeacherInterface  {
+interface TeacherInterface{
     workFromHome(): string;
     getCoffeeBreak(): string;
     workTeacherTasks(): string;
@@ -42,7 +42,6 @@ export const Teacher = class Teacher implements TeacherInterface {
 export function createEmployee(firstName: string, lastName: string, salary: number | string): DirectorInterface | TeacherInterface {
    if (salary < 500) {
     return new Teacher();
-  }
   }
   return new Director();
 }
