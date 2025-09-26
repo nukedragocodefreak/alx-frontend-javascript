@@ -2,9 +2,9 @@ import * as CRUD from './crud';
 
 
 const row: RowElement = {
-    firstName: "Guillaume",
-    lastName: "Salva"
-}
+  firstName: 'Guillaume',
+  lastName: 'Salva',
+};
 
 const rowUdpated: RowElement = {
     ...row,
@@ -13,5 +13,5 @@ const rowUdpated: RowElement = {
 
 const neRowID: RowID = CRUD.insertRow(row);
 const UpdateRow: RowID = CRUD.updateRow(rowUdpated);
-const deletetRow: RowID = CRUD.updateRow(neRowID, UpdateRow);
+const deletetRow: RowID = CRUD.deleteRow(neRowID);
 
