@@ -26,13 +26,13 @@ console.log(teacher1);
 // lastName: "Doe"
 // location: "London"
 
-interface Directors extends Teacher{
+interface Director extends Teacher{
     numberOfReports: number
 }
 
 
 // Example usage:
-const director1: Directors = {
+const director1: Director = {
   firstName: "Alice",
   lastName: "Smith",
   fullTimeEmployee: true,
