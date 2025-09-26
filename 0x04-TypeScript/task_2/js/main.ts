@@ -40,9 +40,10 @@ export const Teacher = class Teacher implements TeacherInterface {
 }
 
 export function createEmployee(firstName: string, lastName: string, salary: number | string): DirectorInterface | TeacherInterface {
-   if (salary < 500) {
+  if (salary < 500) {
     return new Teacher();
   }
+
   return new Director();
 }
 
