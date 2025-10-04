@@ -40,24 +40,25 @@ export const Teacher = class Teacher implements TeacherInterface {
 }
 
 export function createEmployee(firstName: string, lastName: string, salary: number | string): DirectorInterface | TeacherInterface {
-  if (salary < 500) {
+  const salaryNumber = typeof salary === 'number' ? salary : Number(salary);
+  if (salaryNumber < 500) {
     return new Teacher();
   }
 
   return new Director();
 }
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+console.log(createEmployee('John', 'Doe', 200));
+console.log(createEmployee('Jane', 'Smith', 1000));
+console.log(createEmployee('Jim', 'Beam', '$500'));
 
-function isDirector(employee:  Teacher | Director): employee is Director{
-  return (employee as Director).workDirectorTasks != undefined;
+function isDirector(employee: TeacherInterface | DirectorInterface): employee is DirectorInterface {
+  return (employee as DirectorInterface).workDirectorTasks !== undefined;
 }
 
-function executeWork(employee: Teacher | Director): string{
-  if(isDirector(employee)){
-   return employee.workDirectorTasks();
+function executeWork(employee: TeacherInterface | DirectorInterface): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
   }
   return employee.workTeacherTasks();
 }
