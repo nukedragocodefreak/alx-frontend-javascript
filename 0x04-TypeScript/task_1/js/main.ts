@@ -55,7 +55,14 @@ interface IStudentClass {
   displayName(): string;
 }
 
+export interface StudentConstructor {
+  new(firstName: string, lastName: string): StudentClassInterface;
+}
 
+export interface StudentClassInterface {
+  displayName(): string;
+  workOnHomework(): string;
+}
 class StudentClass {
   private firstName: string;
   private lastName: string;
@@ -74,11 +81,3 @@ class StudentClass {
   }
 }
 
-export interface StudentConstructor {
-  new(firstName: string, lastName: string): StudentClassInterface;
-}
-
-export interface StudentClassInterface {
-  displayName(): string;
-  workOnHomework(): string;
-}
