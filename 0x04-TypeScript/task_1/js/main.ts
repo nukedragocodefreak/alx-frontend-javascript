@@ -49,11 +49,6 @@ export function printTeacher({ firstName, lastName }: { firstName: string; lastN
   return `${firstName}. ${lastName}`;
 }
 
-// Interface for the constructor
-interface StudentConstructor {
-  new (firstName: string, lastName: string): IStudentClass;
-}
-
 // Interface for the class instance
 interface IStudentClass {
   workOnHomework(): string;
@@ -77,4 +72,13 @@ class StudentClass {
   displayName(): string {
     return this.firstName;
   }
+}
+
+export interface StudentConstructor {
+  new(firstName: string, lastName: string): StudentClassInterface;
+}
+
+export interface StudentClassInterface {
+  displayName(): string;
+  workOnHomework(): string;
 }
