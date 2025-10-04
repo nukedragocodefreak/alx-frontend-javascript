@@ -25,6 +25,15 @@ export const Director = class Director implements DirectorInterface {
     }
 }
 
+export function teachClass(todayClass:Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math'
+  } else if (todayClass === 'History') {
+    return 'Teaching History'
+  }
+}
+
+
 export const Teacher = class Teacher implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
@@ -65,10 +74,3 @@ function executeWork(employee: TeacherInterface | DirectorInterface): string {
 
 export type Subjects = 'Math' | 'History';
 
-export function teachClass(todayClass:Subjects): string {
-  if (todayClass === 'Math') {
-    return 'Teaching Math'
-  } else if (todayClass === 'History') {
-    return 'Teaching History'
-  }
-}
